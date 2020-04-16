@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+</head>
+<body>
+    <center>
+        <h1>Below is and audio and video player for the user</h1>
+
+        <h3>To pause and play the video to play click on it</h3>
+        <video src="video/comedy.mp4" type="video/mp4" autoplay id="comedy" onclick="playPause()" >
+            
+        </video>
+    </center>
+</body>
+<script>
+    var comedy = document.getElementById('comedy')
+    function playPause() {
+        if (comedy.paused) {
+            comedy.play()
+        }else{
+            comedy.pause()
+        }
+    }
+</script>
+</html>

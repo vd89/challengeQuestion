@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio testing file</title>
+</head>
+<body>
+    
+    <center>
+        <h1>The Audio will will be in auto play mode </h1>
+        <h1>
+            <audio src="audio/Motivation.mp3" type="audio/mp3" id="motivation" autoplay  >this is and autoplay
+            </audio>
+            <p>To stop please click me</p>
+            <button onclick="playAudio()">onclick</button>
+        </h1>
+    </center>
+</body>
+<script>
+    var motivation = document.getElementById("motivation")
+    function playAudio() {
+        if (motivation.paused) {
+            motivation.play()
+        } else {
+            motivation.pause()
+        }
+    }
+</script>
+</html>
