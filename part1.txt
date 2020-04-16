@@ -1,0 +1,146 @@
+                                PART 1
+    
+    1)Explain the concept of “strict” in JavaScript with any code sample ?
+
+        Ans: "use strict"; Defines that JavaScript code should be executed in "strict mode".
+             The "use strict" directive was new in ECMAScript version 5.
+             It is not a statement, but a literal expression, ignored by earlier versions of JavaScript.
+             The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+             With strict mode, you can not, for example, use undeclared variables.
+             All modern browsers support "use strict" except Internet Explorer 9 and lower
+
+                example 
+
+                "use strict";
+                    x = 3.14;   // This will cause an error because x is not declared
+
+    2)Consider the two functions below. Will they both return the same thing? Why or why not?
+                
+                function foo1()
+                {
+                return {
+                bar: "hello"
+                };
+                }
+
+                function foo2()
+                {
+                return
+                {
+                bar: "hello"
+                };
+                }
+
+        Ans: 
+
+            foo1() will give {bar:"hello"} -> at return the object is Defines
+            foo2() will give undefine -> at return the function will end
+
+        3) ​ In what order will the numbers 1-4 be logged to the console when the code below is executed? Why?
+                    
+                    (function() {
+                    console.log(1);
+                    setTimeout(function(){console.log(2)}, 1000);
+                    setTimeout(function(){console.log(3)}, 0);
+                    console.log(4);
+                    })();
+
+        Ans: It is an IIFE function
+                output order will be 
+                1 ->first console.log(1)
+                4 -> last console.log(4)
+                3 -> setTimeout(console.log(3)) time = 0
+                2 -> setTimeout(console.log(2)) time = 1000 it represents delay
+
+        
+        4) ​ What will the code below output to the console and why?
+
+                var arr1 = "john".split('');
+                var arr2 = arr1.reverse();
+                var arr3 = "jones".split('');
+                arr2.push(arr3);
+                console.log("array 1: length=" + arr1.length + " last=" +
+                arr1.slice(-1));
+                console.log("array 2: length=" + arr2.length + " last=" +
+                arr2.slice(-1));
+
+            Ans: 
+                first console --> array 1: length=5 last=j,o,n,e,s
+                second console --> array 2: length=5 last=j,o,n,e,s 
+
+                at the time arr2 = arr1.reverse() --> ["n", "h", "o", "j"] with 4 elements 
+                .push will change the add an arr3 to the arr2 and which will change arr1 as well 
+                arr1.slice(-1) will give the output to the last element and that is and arr in 
+
+        5) ​ What is a “closure” in JavaScript? Provide an example.
+
+
+            Ans : 
+                    A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+                    function init() {
+                    var name = 'Mozilla'; // name is a local variable created by init
+                    function displayName() { // displayName() is the inner function, a closure
+                        alert(name); // use variable declared in the parent function
+                    }
+                    displayName();
+                    }
+                    init();
+
+
+        6) ​ What will the following code output to the console:
+
+                console.log((function f(n){return ((n > 1) ? n * f(n-1) : n)})(10));
+            
+            
+            Ans:
+
+                this is calling the f(n) = f(10) => 	3628800
+
+        
+        7) ​ Consider the code snippet below. What will the console output be and why?   
+
+                (function(x) {
+                    return (function(y) {
+                    console.log(x);
+                    })(2)
+                    })(1);
+
+            Ans: Dueto closure the value of x = 1
+                and the output will be 1
+
+        8) ​ Consider the following code. What will the output be, and why?
+                    (function () {
+                    try {
+                    throw new Error();
+                    } catch (x) {
+                    var x = 1, y = 2;
+                    console.log(x);
+                    }
+                    console.log(x);
+                    console.log(y);
+                    })();
+
+            Ans: first console => x = 1 ==> x is declared 1
+                second console => undefine ==> x is not declared 1
+                third console => y = 2 ==> y is declared in the function scope
+
+
+        9) ​ What will the following code output and why?
+
+            var b = 1;
+                function outer(){
+                var b = 2
+                function inner(){
+                b++;
+                var b = 3;
+                console.log(b)
+                }
+                inner();
+                }
+                outer();
+
+            Ans:
+                b = 3 ==> as in the inner function the value of b is declared to 3 and it will first find from the inner scope
+
+        
