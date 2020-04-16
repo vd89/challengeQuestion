@@ -1,0 +1,132 @@
+                        PART 2
+    
+    1. What will be the output of the following statements?
+    a. console.log(8 * null);
+    Ans:0
+    b. console.log("5" - 1);
+    Ans:4
+    c. console.log("5" + 1);
+    Ans:51
+    d. console.log(“five" * 1);
+    Ans:NaN
+    e. console.log(false == 0);
+    Ans:true
+    🔥
+
+    2. What's the output?
+    var x = `foo ${y}`, y = `bar ${x}`;
+    console.log(x);
+    console.log(y);
+    
+    Ans: foo undefined 
+         bar foo undefined
+
+
+    3. What’s the result of:
+        typeof typeof(null)
+        a. “undefined”
+        b. SyntaxError
+        c. “string”
+        d. “object”
+        e. TypeError
+
+    Ans: a => "undefined"
+
+    4. Are the algorithms of the following checks completely equivalent?
+
+        typeof foo == 'undefined' and
+        typeof foo === 'undefined'
+        a. Yes
+        b. No
+        c. Maybe
+
+        Ans: a ==> Yes 
+
+    5. What’s the result of:
+        var a = (1,5 - 1) * 2;
+
+        a. 0.999999999
+        b. 1
+        c. 0.5
+        d. 8
+        e. -0.5
+        f. 4
+
+        Ans : 8 => comma operator work and the last value is pulled 
+
+
+    6. What will the code below output to the console and why ?
+        console.log(1 + "2" + "2");
+        Ans:122
+        console.log(1 + +"2" + "2");
+        Ans:32
+        console.log(1 + -"1" + "2");
+        Ans:02
+        console.log(+"1" + "1" + "2");
+        Ans:112
+        console.log( "A" - "B" + "2");
+        Ans:NaN2
+        console.log( "A" - "B" + 2);
+        Ans: NaN
+
+    7. What do the following lines output, and why?
+        console.log(1 < 2 < 3);
+        console.log(3 > 2 > 1);
+
+        Ans first = true => it fallowes the rule of left to right
+            second = false =>   It compares left to right, so 3 > 2 > 1 JavaScript translates to true > 1. true has value 1, so it then compares 1 > 1, which is false.
+
+    8. How do you add an element at the beginning of an array? How do you add one at the end?
+
+        var myArray = ['a', 'b', 'c', ‘d’]
+
+        Ans:
+            myArray.unshift('start')
+            myArray.push('end')
+
+            myArray=['start','a', 'b', 'c', ‘d’,'end']
+
+    9. Imagine you have this code:
+        var a = [1, 2, 3];
+        a) Will this line gives an error?
+        a[10] = 99;
+        Ans : there will be no error it will add the value 99 in the 10 item
+        b) What will this output?
+        console.log[a(6)];
+        Ans = TypeError: a is not a function
+        c) What will this output?
+        console.log(a[6]);
+        Ans: the value is not defined 
+            so output will be undefined
+
+
+
+        Explain with output and reasoning.
+
+
+    10. What would the following lines of code output to the console?
+
+    console.log("0 || 1 = "+(0 || 1)); 
+    Ans: 0 || 1 = 1 
+    console.log("1 || 2 = "+(1 || 2));
+    Ans:1 || 2 = 2
+    console.log("0 && 1 = "+(0 && 1));
+    Ans: 0 && 1 = 0
+    console.log("1 && 2 != "+(1 & 2));
+    Ans: 1 && 2 != 0
+
+
+    11. What will be the output of this code?
+
+    var x = 21;
+    var getgirl = function ()
+    {
+    console.log(x);
+    var x = 20;
+    };
+    getgirl ();
+
+    Ans: undefined
+
+    12. What is the value of typeof undefined == typeof NULL?
+    Ans: true 
