@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Golden Ratio</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <script>
+      function getBg() {
+        const color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        // console.log(`${color}`);
+        return color;
+      }
+      var body = document.getElementsByTagName("body")[0];
+      var str = "";
+      var width = 900;
+      var height = 555;
+      var count = 0;
+
+      do {
+        if (count % 2 !== 0) {
+          width = Math.floor(height / 1.62);
+          str += `<div style="width:${width}px;height:${height}px;background:${getBg()};">`;
+        } else {
+          height = Math.floor(width / 1.62);
+          str += `<div style="width:${width}px;height:${height}px;background:${getBg()};">`;
+        }
+        count++;
+      } while (width >= 10 && height >= 10);
+
+      for (let i = 0; i <= count; i++) {
+        str = str + "</div>";
+      }
+
+      body.innerHTML = str;
+    </script>
+  </body>
+</html>
